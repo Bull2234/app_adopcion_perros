@@ -44,6 +44,7 @@ class LoginActivity : AppCompatActivity() {
                         val builder = AlertDialog.Builder(this)
                         builder.setTitle("Bienvenido")
                         builder.setMessage("Gracias por utilizar nuestra app")
+                        builder.setIcon(R.drawable.verificacion)
                         builder.setPositiveButton("Aceptar") { dialog: DialogInterface, _ ->
                             dialog.dismiss() // Cierra el diálogo cuando se hace clic en el botón "Aceptar"
                             val intent = Intent(this, PrincipalActivity::class.java)
@@ -58,6 +59,7 @@ class LoginActivity : AppCompatActivity() {
                         val builder = AlertDialog.Builder(this)
                         builder.setTitle("Error de Autenticacion")
                         builder.setMessage("Por favor, Verifica de nuevo")
+                        builder.setIcon(R.drawable.cancelar)
                         builder.setPositiveButton("Aceptar") { dialog: DialogInterface, _ ->
                             dialog.dismiss() // Cierra el diálogo cuando se hace clic en el botón "Aceptar"
                         }
@@ -71,6 +73,7 @@ class LoginActivity : AppCompatActivity() {
                 val builder = AlertDialog.Builder(this)
                 builder.setTitle("Campos vacíos")
                 builder.setMessage("Por favor, completa todos los campos.")
+                builder.setIcon(R.drawable.cancelar)
                 builder.setPositiveButton("Aceptar") { dialog: DialogInterface, _ ->
                     dialog.dismiss() // Cierra el diálogo cuando se hace clic en el botón "Aceptar"
                 }

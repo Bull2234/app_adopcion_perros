@@ -35,6 +35,7 @@ class RegistrarseActivity : AppCompatActivity() {
                     val builder = AlertDialog.Builder(this)
                     builder.setTitle("Las Contraseñas No Coinciden")
                     builder.setMessage("Por favor, Verifica de nuevo")
+                    builder.setIcon(R.drawable.cancelar)
                     builder.setPositiveButton("Aceptar") { dialog: DialogInterface, _ ->
                         dialog.dismiss() // Cierra el diálogo cuando se hace clic en el botón "Aceptar"
                     }
@@ -50,6 +51,7 @@ class RegistrarseActivity : AppCompatActivity() {
                             val builder = AlertDialog.Builder(this)
                             builder.setTitle("Datos Registrados")
                             builder.setMessage("Bienvenido")
+                            builder.setIcon(R.drawable.verificacion)
                             builder.setPositiveButton("Aceptar") { dialog: DialogInterface, _ ->
                                 dialog.dismiss() // Cierra el diálogo cuando se hace clic en el botón "Aceptar"
                                 val intent = Intent(this, LoginActivity::class.java)
@@ -64,6 +66,7 @@ class RegistrarseActivity : AppCompatActivity() {
                             val builder = AlertDialog.Builder(this)
                             builder.setTitle("Error de Autenticacion")
                             builder.setMessage("Por favor, Verifica de nuevo")
+                            builder.setIcon(R.drawable.cancelar)
                             builder.setPositiveButton("Aceptar") { dialog: DialogInterface, _ ->
                                 dialog.dismiss() // Cierra el diálogo cuando se hace clic en el botón "Aceptar"
                             }
@@ -78,6 +81,7 @@ class RegistrarseActivity : AppCompatActivity() {
                 val builder = AlertDialog.Builder(this)
                 builder.setTitle("Campos vacíos")
                 builder.setMessage("Por favor, completa todos los campos.")
+                builder.setIcon(R.drawable.cancelar)
                 builder.setPositiveButton("Aceptar") { dialog: DialogInterface, _ ->
                     dialog.dismiss() // Cierra el diálogo cuando se hace clic en el botón "Aceptar"
                 }
