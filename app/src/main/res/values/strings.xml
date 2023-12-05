@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">APP FIREBASE LOGIN</string>
+    <string name="app_name" translatable="false">APP FIREBASE LOGIN</string>
     <string name="e_mail">E-Mail</string>
     <string name="password">Password</string>
     <string name="ingresar">ingresar</string>
-    <string name="correo" />
-    <string name="repetir_password" />
+    <string name="correo">Correo</string>
+    <string name="repetir_password">Repeir Password</string>
     <string name="registrarse">Registrarse</string>
     <string name="confirmar_password">Confirmar_password</string>
     <string name="registrate">Registrate</string>
