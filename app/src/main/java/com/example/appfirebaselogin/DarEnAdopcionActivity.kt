@@ -1,17 +1,35 @@
 package com.example.appfirebaselogin
 
 import android.app.DatePickerDialog
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
+import android.widget.Button
 import android.widget.DatePicker
 import android.widget.EditText
+import android.widget.ImageView
+import androidx.activity.result.PickVisualMediaRequest
+import androidx.activity.result.contract.ActivityResultContracts
+import java.net.URI
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
 
 class DarEnAdopcionActivity : AppCompatActivity() {
+
+    val pickMedia = registerForActivityResult(ActivityResultContracts.PickVisualMedia()){   Uri ->
+        //obtener imagen desde el dispositivo
+        if (Uri !=null){
+            imagen.setImageURI(Uri)
+        }else{
+
+        }
+
+    }
+    lateinit var btnImage: Button
+    lateinit var imagen: ImageView
 
     private lateinit var txtDate: EditText
     private val calendar: Calendar = Calendar.getInstance()
@@ -66,6 +84,15 @@ class DarEnAdopcionActivity : AppCompatActivity() {
         // Mostrar el DatePickerDialog cuando se hace clic en el EditText
         txtDate.setOnClickListener {
             showDatePickerDialog()
+        }
+
+        ///////obtener id del bton para la imagen y el id de el imageview
+        btnImage = findViewById(R.id.btnImagen)
+         imagen = findViewById(R.id.imagAnimal)
+
+        btnImage.setOnClickListener {
+            ///llamamos a pickmedia
+            pickMedia.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
         }
 
     }
