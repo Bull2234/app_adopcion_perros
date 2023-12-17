@@ -4,6 +4,7 @@ import android.app.DatePickerDialog
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Button
@@ -12,6 +13,13 @@ import android.widget.EditText
 import android.widget.ImageView
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
+import com.example.appfirebaselogin.Data.modelos.Perro
+import com.example.appfirebaselogin.Data.modelos.RetrofitService
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import java.net.URI
 import java.text.SimpleDateFormat
 import java.util.Calendar
@@ -90,9 +98,38 @@ class DarEnAdopcionActivity : AppCompatActivity() {
         btnImage = findViewById(R.id.btnImagen)
          imagen = findViewById(R.id.imagAnimal)
 
+        val retrofit = Retrofit.Builder()
+            .baseUrl("https://gdg0gqfj-80.use2.devtunnels.ms/ApiPerrosMovil/api/") // URL base de tu API
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        val miApi = retrofit.create(RetrofitService::class.java)
+
         btnImage.setOnClickListener {
             ///llamamos a pickmedia
             pickMedia.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
+
+            val llamada: Call<Perro> = miApi.obtenerPerros()
+
+// Ejecutar la llamada de manera asíncrona
+            llamada.enqueue(object : Callback<Perro> {
+                override fun onResponse(call: Call<Perro>, response: Response<Perro>) {
+                    if (response.isSuccessful) {
+                        val datos: Perro? = response.body()
+                        // Hacer algo con los datos
+                        println(datos)
+                        Log.d("hola", datos.toString())
+                    } else {
+                        // Manejar el error
+                    }
+                }
+
+                override fun onFailure(call: Call<Perro>, t: Throwable) {
+                    // Manejar el fallo de la llamada
+                    }
+            })
+
+
         }
 
     }

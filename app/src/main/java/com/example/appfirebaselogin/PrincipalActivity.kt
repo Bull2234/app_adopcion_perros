@@ -16,8 +16,8 @@ class PrincipalActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_principal)
 
-        val Btn1 = findViewById<ImageButton>(R.id.Btn1)//dar en adopcion
-        val Btn2 = findViewById<ImageButton>(R.id.Btn2)//adoptar
+        val Btn1 = findViewById<Button>(R.id.Btn1)//dar en adopcion
+        val Btn2 = findViewById<Button>(R.id.Btn2)//adoptar
 
         Btn1.setOnClickListener(){
             val intent = Intent(this, DarEnAdopcionActivity::class.java)

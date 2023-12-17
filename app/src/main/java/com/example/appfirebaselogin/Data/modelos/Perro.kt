@@ -2,6 +2,8 @@ package com.example.appfirebaselogin.Data.modelos
 
 import android.icu.lang.UCharacter.NumericType
 import com.google.gson.annotations.SerializedName
+import java.math.BigDecimal
+import java.util.Date
 
 data class Perro(
 
@@ -15,18 +17,22 @@ data class Perro(
     val nombre:String,
 
     @SerializedName("peso")
-    val peso:NumericType,
+    val peso:BigDecimal,
 
     @SerializedName("tamanio")
-    val tamanio:NumericType,
+    val tamanio:BigDecimal,
 
     @SerializedName("edad")
-    val edad:Int,
+    val edad:String,
 
 
     @SerializedName("idgenero")
     val idgenero:Int,
 
     @SerializedName("descripcion")
-    val descripcion:String
+    val descripcion:String,
+
+
+    @SerializedName("fecha")
+    val fecha:Date?
 )

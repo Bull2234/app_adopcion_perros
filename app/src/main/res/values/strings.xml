@@ -30,4 +30,6 @@
     <string name="ingrese_sexo">Ingrese Sexo</string>
     <string name="ingrese_raza">Ingrese Raza</string>
     <string name="name">Name</string>
+    <string name="dar_en_adopci_n">DAR EN ADOPCIÓN</string>
+    <string name="adoptar">ADOPTAR</string>
 </resources>
