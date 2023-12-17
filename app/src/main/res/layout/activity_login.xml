@@ -34,7 +34,7 @@
         android:layout_marginTop="15dp"
         android:layout_marginRight="15dp"
         android:layout_weight="9"
-        android:drawableLeft="@drawable/correo"
+        android:drawableStart="@drawable/correo"
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="@string/e_mail"
@@ -78,7 +78,9 @@
             android:text="@string/ingresar"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white"
+            android:backgroundTint="#FF9800"
+            app:cornerRadius="20dp"/>
 
     </androidx.cardview.widget.CardView>
 
@@ -97,7 +99,8 @@
             android:text="@string/registrate"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="@color/white"/>
+            android:backgroundTint="#FF9800"
+            app:cornerRadius="20dp"/>
 
     </androidx.cardview.widget.CardView>
 
