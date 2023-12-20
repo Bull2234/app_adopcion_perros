@@ -193,7 +193,7 @@
                         android:inputType="textAutoComplete" />
 
                     <RadioGroup
-                        android:id="@+id/radioGroup"
+                        android:id="@+id/radioBoton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">

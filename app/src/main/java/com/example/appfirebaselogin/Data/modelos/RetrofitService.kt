@@ -9,6 +9,6 @@ import retrofit2.http.Query
 interface RetrofitService {
 
     @GET("Pais")
-    fun obtenerPerros(): Call<Perro>
+    fun obtenerPerros(): Call<List<Perro>>
 
 }
